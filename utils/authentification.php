@@ -1,5 +1,5 @@
 <?php
-    require "./../DB/config.php";
+    require_once "./../DB/config.php";
 
     $email = $_POST["email"];
     $password = $_POST["password"];
@@ -23,7 +23,7 @@
         $_SESSION['userid'] = $row[0];
         $_SESSION['nom'] = $row[2];
         $_SESSION['prenom'] = $row[3];
-        header("Location: ./../login.php");
+        header("Location: ./../index.php");
     }else
         header("Location: ./../login.php?error=error");
 

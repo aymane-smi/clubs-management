@@ -1,5 +1,5 @@
 <?php
-    //require "./../DB/config.php";
+    require_once dirname(__FILE__)."/../DB/config.php";
 
     class Apprenant{
 
@@ -70,6 +70,16 @@
 
 
         //setters
+
+        /*
+        *set id
+        *@param int $id
+        */
+
+        
+        function setId($id){
+            $this->id = $id;
+        }
 
         /*
         *modifier le nom de l'apprenant
