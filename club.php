@@ -112,7 +112,13 @@ $club->listeApprenants();
                                     déconnecter
                                 </button>
                             </form>
-                        </div>
+                            ';
+                            echo '<form action="./utils/deleteClub.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $club->getId(); ?>" />
+                <input type="hidden" name="image" value="<?php echo $club->getImage(); ?>" />
+                <button class="btn btn-danger delete-club">supprimer le club"<?php echo $club->getNom(); ?>"</button>
+            </form>';
+                        echo '</div>
                     </section>';
             } else {
                 echo "<a class='btn btn-sm btn-primary' href='./login.php'>Login</a>";

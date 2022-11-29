@@ -1,11 +1,11 @@
 <?php
 require "./../DB/config.php";
 session_start();
-print_r($_SESSION);
+//print_r($_SESSION);
 if (isset($_SESSION['userid'])) {
     $tmp = new DB();
     $tmp->init();
-    $query = "UPDATE user SET nom = '{$_POST['nom']}', prenom = '{$_POST['prenom']}', classe = '{$_POST['classe']}', annee = {$_POST['annee']} WHERE id = {$_POST['id']};";
+    $query = "UPDATE user SET nom = '{$_POST['nom']}', prenom = '{$_POST['prenom']}' WHERE id = {$_POST['id']};";
     //echo $query;
     $tmp->conn->query($query);
     if (isset($_POST['mdp'])) {

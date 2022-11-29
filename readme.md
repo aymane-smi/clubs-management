@@ -1,3 +1,5 @@
+#capture de l'application
+![app](app.png);
 # cahier des charges!
 https://docs.google.com/document/d/1eTyDjwpjnedOgCWyRauqnRXkhbmu5s3XfHIPmmDF5kM/edit?usp=sharing
 
