@@ -112,14 +112,8 @@ $club->listeApprenants();
                                     déconnecter
                                 </button>
                             </form>
-                            ';
-                            echo '<form action="./utils/deleteClub.php" method="POST">
-                <input type="hidden" name="id" value="<?php echo $club->getId(); ?>" />
-                <input type="hidden" name="image" value="<?php echo $club->getImage(); ?>" />
-                <button class="btn btn-danger delete-club">supprimer le club"<?php echo $club->getNom(); ?>"</button>
-            </form>';
-                        echo '</div>
-                    </section>';
+                            </div>
+                        </section>';
             } else {
                 echo "<a class='btn btn-sm btn-primary' href='./login.php'>Login</a>";
             }
@@ -140,16 +134,26 @@ $club->listeApprenants();
                                                     echo " 🎯";
                                                 ?>"</p>
         </div>
-        <div class="section">
-            <button class="btn btn-success add-apprenant">ajouter un nouveau apprenant</button>
-            <button class="btn btn-info show-details">club détails</button>
-            <button class="btn btn-warning text-white change-respo">changer le représentant</button>
-            <form action="./utils/deleteClub.php" method="POST">
-                <input type="hidden" name="id" value="<?php echo $club->getId(); ?>" />
-                <input type="hidden" name="image" value="<?php echo $club->getImage(); ?>" />
-                <button class="btn btn-danger delete-club">supprimer le club"<?php echo $club->getNom(); ?>"</button>
-            </form>
-        </div>
+        <?php
+            if(isset($_SESSION['userid'])){
+                echo '<div class="section">
+                <button class="btn btn-success add-apprenant">ajouter un nouveau apprenant</button>
+                <button class="btn btn-info show-details">club détails</button>
+                <button class="btn btn-warning text-white change-respo">changer le représentant</button>
+                <form action="./utils/deleteClub.php" method="POST">
+                    <input type="hidden" name="id" value="';
+                    echo $club->getId();
+                    echo '"/>
+                    <input type="hidden" name="image" value="';
+                    echo $club->getImage();
+                    echo'" />
+                    <button class="btn btn-danger delete-club">supprimer le club"';
+                    echo $club->getNom();
+                    echo '"</button>
+                </form>
+            </div>';
+            }
+        ?>
         <div class="apprenant-container">
             <table class="table">
                 <thead>

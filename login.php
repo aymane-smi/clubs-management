@@ -25,6 +25,11 @@
                     <label for="mdp">Mot de passe:</label>
                     <input id="mdp" name="mdp" type="password" required />
                 </div>
+                <?php
+                    if(isset($_GET['error'])){
+                        echo '<p class="text-danger">Mot de passe/Email est invalide !!!</p>';
+                    }
+                ?>
                 <button class="btn btn-sm btn-success">Authentifier</button>
             </form>
         </section>
